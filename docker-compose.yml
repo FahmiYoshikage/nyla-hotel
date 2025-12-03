@@ -7,7 +7,7 @@ services:
       - "8080:80"
     environment:
       - DB_HOST=db
-      - DB_USER=${DB_USER:-root}
+      - DB_USER=${DB_USER:-app}
       - DB_PASS=${DB_PASS:-example}
       - DB_NAME=${DB_NAME:-hotel}
     volumes:
@@ -22,7 +22,7 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=${DB_PASS:-example}
       - MYSQL_DATABASE=${DB_NAME:-hotel}
-      - MYSQL_USER=${DB_USER:-root}
+      - MYSQL_USER=${DB_USER:-app}
       - MYSQL_PASSWORD=${DB_PASS:-example}
     ports:
       - "3306:3306"
@@ -35,7 +35,7 @@ services:
     container_name: hotel_phpmyadmin
     environment:
       - PMA_HOST=db
-      - PMA_USER=${DB_USER:-root}
+      - PMA_USER=${DB_USER:-app}
       - PMA_PASSWORD=${DB_PASS:-example}
     ports:
       - "8081:80"
