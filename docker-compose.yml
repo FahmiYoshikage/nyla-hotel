@@ -28,7 +28,7 @@ services:
       - "3306:3306"
     volumes:
       - db_data:/var/lib/mysql
-      - ./hotel (1).sql:/docker-entrypoint-initdb.d/seed.sql
+      - "./hotel (1).sql":/docker-entrypoint-initdb.d/seed.sql
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
